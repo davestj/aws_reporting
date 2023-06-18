@@ -1,4 +1,4 @@
-# AWS Reporter serie
+# AWS Reporter series
 # Python3 EC2 Instance Report Generator
 
 This Python 3 script allows you to generate a report of all the active running EC2 instances in your AWS account and save it as an Excel spreadsheet. The report includes information such as the instance name, instance ID, instance type, key name, uptime, and VPC ID.
