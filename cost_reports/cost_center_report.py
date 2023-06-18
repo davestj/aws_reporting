@@ -1,4 +1,5 @@
 import argparse
+import datetime
 import boto3
 import pandas as pd
 
@@ -9,6 +10,12 @@ class CostCenterReport:
         self.cost_explorer_client = session.client('ce')
 
     def get_latest_report(self):
+        """
+        Retrieves the latest cost center report from the AWS Cost Explorer API.
+
+        Returns:
+        - result: List of dictionaries representing the cost center report data.
+        """
         response = self.cost_explorer_client.get_cost_and_usage(
             TimePeriod={
                 'Start': '2023-01-01',
@@ -33,6 +40,12 @@ class CostCenterReport:
         return result
 
     def generate_report(self, report_data):
+        """
+        Generates a cost center report in the form of an Excel spreadsheet.
+
+        Args:
+        - report_data: List of dictionaries representing the cost center report data.
+        """
         data = []
         for entry in report_data:
             linked_account = entry['Keys'][0]
@@ -41,11 +54,15 @@ class CostCenterReport:
             data.append([linked_account, cost_center, cost])
 
         df = pd.DataFrame(data, columns=['Linked Account', 'Cost Center', 'Cost'])
-        filename = 'cost_center_report.xlsx'
+        timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+        filename = f'cost_center_report_{timestamp}.xlsx'
         df.to_excel(filename, index=False)
         print(f"Report generated and saved as '{filename}'.")
 
     def run(self):
+        """
+        Runs the cost center report generation process.
+        """
         report_data = self.get_latest_report()
         self.generate_report(report_data)
 

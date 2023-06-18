@@ -1,4 +1,3 @@
-
 # Cost Center Report Generator
 
 This Python 3 script allows you to generate a cost center report from the AWS Cost Explorer API. The report provides information about the cost incurred for different linked accounts and services associated with your AWS profile. The report is generated in the form of an Excel spreadsheet.
@@ -29,22 +28,21 @@ This Python 3 script allows you to generate a cost center report from the AWS Co
 
    Replace `<AWS_PROFILE_NAME>` with the name of your AWS profile configured in the AWS CLI. This profile should have the necessary permissions to access the AWS Cost Explorer service.
 
-5. The script will fetch the latest cost center report from the AWS Cost Explorer API based on the specified time period (currently set from January 1, 2023, to June 17, 2023) and generate a report in the form of an Excel spreadsheet. The report file will be named `cost_center_report.xlsx` and will include the following columns
+5. The script will fetch the latest cost center report from the AWS Cost Explorer API based on the specified time period (currently set from January 1, 2023, to June 17, 2023) and generate a report in the form
 
-: 'Linked Account', 'Cost Center', and 'Cost'.
+ of an Excel spreadsheet.
 
-6. Once the report is generated, you will see a message indicating the successful generation and the filename of the report.
+6. Once the report is generated, you will see a message indicating the successful generation and the filename of the report, including a timestamp.
 
    ```
-   Report generated and saved as 'cost_center_report.xlsx'.
+   Report generated and saved as 'cost_center_report_<timestamp>.xlsx'.
    ```
 
 7. Open the generated Excel spreadsheet to view the cost center report.
 
 ## Important Note
 
-Make sure you have properly configured the AWS CLI with the desired AWS profile before running the script. The specified profile should have the necessary permissions to access the AWS Cost Explorer service.
+Make sure you have a stable internet connection and valid AWS credentials with appropriate permissions before running the script.
 
-For further information and support, please refer to the [AWS CLI Documentation](https://docs.aws.amazon.com/cli/index.html).
+For further information and support, please refer to the [AWS CLI Documentation](https://docs.aws.amazon.com/cli/index.html) and the official documentation of the AWS Cost Explorer service.
 
-**Note:** This script requires a stable internet connection and valid AWS credentials with appropriate permissions.
