@@ -1,4 +1,5 @@
-# EC2 Instance Report Generator
+# AWS Reporter serie
+# Python3 EC2 Instance Report Generator
 
 This Python 3 script allows you to generate a report of all the active running EC2 instances in your AWS account and save it as an Excel spreadsheet. The report includes information such as the instance name, instance ID, instance type, key name, uptime, and VPC ID.
 
@@ -41,7 +42,7 @@ This Python 3 script allows you to generate a report of all the active running E
 
 **Note:** This script requires a stable internet connection and proper AWS credentials to access the EC2 service.
 
-# Route 53 Zone Report Generator
+# Python3 Route 53 Zone Report Generator
 
 This Python 3 script allows you to generate a report of active Route 53 hosted zones in AWS and save it as an Excel spreadsheet. The report includes the zone name, zone description, and the number of records in each zone.
 
